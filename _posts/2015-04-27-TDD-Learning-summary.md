@@ -32,4 +32,4 @@ java中单元测试Junit使用：单元测试利器 JUnit 4
 
 **重构方法**：clean coding、代码大全。
 
-*参考的文章*：[谈测试驱动开发（TDD）](http://www.ibm.com/developerworks/cn/linux/l-tdd/)
+*参考的文章*：[浅谈测试驱动开发（TDD）](http://www.ibm.com/developerworks/cn/linux/l-tdd/)
