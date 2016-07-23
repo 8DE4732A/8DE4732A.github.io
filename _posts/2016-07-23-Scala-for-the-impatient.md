@@ -6,4 +6,4 @@ categories: learning
 ---
 
 ## Scala For The Impatient
-![图片](/assets/scala_for_the_impatient.jpg)
+![图片](/assets/scala_for_the_impatient.png)
