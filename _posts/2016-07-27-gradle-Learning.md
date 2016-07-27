@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gradle Leaning"
+title:  "Gradle Learning"
 date:   2016-07-27 15:17:22 +0800
 categories: learning
 ---
