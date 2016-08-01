@@ -51,3 +51,13 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+
+#fork-me img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  width: calc((100% - 1050px)/2);
+  max-width: 149px;
+}
