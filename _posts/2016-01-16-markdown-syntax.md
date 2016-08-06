@@ -4,7 +4,7 @@ title:  "Markdown Syntax"
 date:   2016-01-16 21:37:32 +0800
 categories: tools
 ---
-**转载于:** [http://www.appinn.com/markdown/](http://www.appinn.com/markdown/);
+**源地址:** [http://www.appinn.com/markdown/](http://www.appinn.com/markdown/);
 
 
 << [访问 Wow!Ubuntu](http://wowubuntu.com)
