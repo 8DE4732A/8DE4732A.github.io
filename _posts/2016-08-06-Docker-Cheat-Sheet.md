@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "Docker Cheat"
+title:  "Docker Cheat Sheet"
 date:   2016-08-06 23:36:22 +0800
 categories: learning
 ---
 
 **源地址:** [https://github.com/wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
+
+
 # Docker Cheat Sheet
 
 
@@ -30,7 +32,7 @@ categories: learning
 
 ## 为何使用 Docker
 
-"通过 Docker, 开发者可以使用任何语言任何工具创建任何应用。“Dockerized” 的应用是完全可移植的，能在任何地方运行 - 不管是同事的 OS X 和 Windows 笔记本，或是在云端运行的 Ubuntu QA 服务，还是在虚拟机运行的 Red Hat 产品数据中心。
+通过 Docker, 开发者可以使用任何语言任何工具创建任何应用。“Dockerized” 的应用是完全可移植的，能在任何地方运行 - 不管是同事的 OS X 和 Windows 笔记本，或是在云端运行的 Ubuntu QA 服务，还是在虚拟机运行的 Red Hat 产品数据中心。
 
  Docker Hub 上有 13,000+ 的应用，开发者可以从中选取一个进行快速扩展开发。Docker 跟踪管理变更和依赖关系，让系统管理员能更容易理解开发人员是如何让应用运转起来的。而开发者可以通过 Docker Hub 的共有/私有仓库，构建他们的自动化编译，与其他合作者共享成果。
 
