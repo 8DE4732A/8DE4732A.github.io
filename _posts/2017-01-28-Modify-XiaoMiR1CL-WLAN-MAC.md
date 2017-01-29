@@ -25,3 +25,13 @@ sed reg2 Factory.bin.1 > Factory.bin.2
 mtd -r write /tmp/Factory.bin.2 factory
 }; random_mac
  ```
+
+ PandoraBox中sed无法修改，增加如下命令：
+
+ ```shell
+mac1=\\xF0\\xB4$(echo $(hexdump -n4 -e '/1 ":%02x"' /dev/urandom) | sed 's/:/\\x/g')
+mac2=\\xF0\\xB4$(echo $(hexdump -n4 -e '/1 ":%02x"' /dev/urandom) | sed 's/:/\\x/g')
+printf $mac1 | dd of=Factory.bin.c bs=1 count=6 conv=notrunc seek=4
+printf $mac2 | dd of=Factory.bin.c bs=1 count=6 conv=notrunc seek=40
+mtd -r write /tmp/Factory.bin.2 factory
+ ```
