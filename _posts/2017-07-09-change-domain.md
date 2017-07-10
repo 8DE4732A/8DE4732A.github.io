@@ -12,4 +12,4 @@ categories: tools
 4. google搜索反向代理改为 [g.liuping.win](http://g.liuping.win)
 5. 域名邮箱使用阿里云免费企业邮箱，![liuping@liuping.win](/assets/email_image.png)
 6. 原域名增加重定向声明。[fireliuping.me](http://fireliuping.me)
-7. 增加维基中文反向代理。[w.liuping.win](http://w.liuping.win)
+7. 增加维基中文反向代理。[w.liuping.win](http://w.liuping.win), [mw.liuping.win](http://mw.liuping.win)。
