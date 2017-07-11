@@ -18,3 +18,5 @@ categories: tools
 reference:
 1. https://zhuanlan.zhihu.com/p/20631741
 2. https://loggerhead.me/posts/shadowsocks-yuan-ma-fen-xi-xie-yi-yu-jie-gou.html
+3. http://www.cnblogs.com/Anker/p/3265058.html
+4. http://www.jianshu.com/p/dfd940e7fca2
