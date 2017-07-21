@@ -24,13 +24,18 @@
 </div>
 <script>
   $('#authModal').modal({backdrop: 'static', keyboard: false});
-  $('#authModal').modal('show');
+  if(localStorage.getItem("username")) {
+
+  } else {
+    $('#authModal').modal('show');
+  }
   $('#authButton').click(function () {
     var username = $("#username").val();
     var password = $("#password").val();
 
     if(username === "admin" && password === "...") {
       $('#authModal').modal('hide');
+      localStorage.setItem("username", "admin");
     }
   });
 
