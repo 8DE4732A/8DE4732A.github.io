@@ -23,10 +23,10 @@
   </div>
 </div>
 <script>
-  $('#authModal').modal({backdrop: 'static', keyboard: false});
   if(localStorage.getItem("username")) {
 
   } else {
+    $('#authModal').modal({backdrop: 'static', keyboard: false});
     $('#authModal').modal('show');
   }
   $('#authButton').click(function () {
