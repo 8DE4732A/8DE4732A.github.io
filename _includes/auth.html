@@ -33,9 +33,9 @@
     var username = $("#username").val();
     var password = $("#password").val();
 
-    if(username === "admin" && password === "...") {
+    if(password === "...") {
       $('#authModal').modal('hide');
-      localStorage.setItem("username", "admin");
+      localStorage.setItem("username", username);
     }
   });
 
