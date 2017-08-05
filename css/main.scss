@@ -61,3 +61,12 @@ $on-laptop:        800px;
   width: calc((100% - 1050px)/2);
   max-width: 149px;
 }
+
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 100;
+}
