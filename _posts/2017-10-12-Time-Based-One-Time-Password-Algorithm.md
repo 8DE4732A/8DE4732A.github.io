@@ -6,7 +6,7 @@ categories: learning
 ---
 
 ```shell
-pip install pyopt
+pip install pyotp
 ```
 
 ```python
