@@ -2,17 +2,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">认证</h4>
+        <h4 class="modal-title">TOTP认证</h4>
       </div>
       <div class="modal-body">
         <form action="javascript:void()">
           <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
+            <label for="code">Code</label>
+            <input type="text" class="form-control" id="code" name="code">
           </div>
           <button id="authButton" type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -23,20 +19,29 @@
   </div>
 </div>
 <script>
-  if(localStorage.getItem("username")) {
+  if(sessionStorage.getItem("verify")) {
 
   } else {
     $('#authModal').modal({backdrop: 'static', keyboard: false});
     $('#authModal').modal('show');
   }
   $('#authButton').click(function () {
-    var username = $("#username").val();
-    var password = $("#password").val();
-
-    if(password === "...-") {
-      $('#authModal').modal('hide');
-      localStorage.setItem("username", username);
-    }
+    var code = $("#code").val();
+    $.ajax({
+      url: "https://liuping.ml:9098/totp/verify",
+      type: "POST"
+      data: $.param({"code" : code});
+      async: false,
+      success: function (data) {
+        if(data["result"]) {
+          $('#authModal').modal('hide');
+          sessionStorage.setItem("verify", code);
+        }
+        else {
+          alert("code incorrect!");
+        }
+      }
+    });
   });
 
 </script>

@@ -10,11 +10,11 @@ pip install pyopt
 ```
 
 ```python
-import pyopt
+import pyotp
 import base64
 
-topt = pyopt.TOTP(base64.b32encode("123123"))
-topt.now()
+totp = pyotp.TOTP(base64.b32encode("123123"))
+totp.now()
 totp.verify(492039)
 ```
 
