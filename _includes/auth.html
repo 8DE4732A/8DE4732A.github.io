@@ -29,8 +29,8 @@
     var code = $("#code").val();
     $.ajax({
       url: "https://liuping.ml:9098/totp/verify",
-      type: "POST"
-      data: $.param({"code" : code});
+      type: "POST",
+      data: $.param({"code" : code}),
       async: false,
       success: function (data) {
         if(data["result"]) {
