@@ -28,7 +28,7 @@
   $('#authButton').click(function () {
     var code = $("#code").val();
     $.ajax({
-      url: "https://liuping.ml:9098/totp/verify",
+      url: "https://ss.liuping.win:9098/totp/verify",
       type: "POST",
       data: $.param({"code" : code}),
       async: false,
