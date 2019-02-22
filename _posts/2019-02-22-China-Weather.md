@@ -43,4 +43,4 @@ convert to mp4
 ffmpeg -f image2 -framerate 5 -i d:\\weather-ffmpeg\%06d.jpg -s 960x650 weather.mp4
 ```
 
-<video src="http://ss.liuping.win" controls="controls"></video>
+<video src="http://ss.liuping.win/weather.mp4" controls="controls"></video>
