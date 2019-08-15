@@ -951,4 +951,171 @@ main(int argc, char **argv)
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
- ```
+```
+
+
+### leetCode 正则表达式匹配
+实现* 和 .
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Start {
+    public static void main(String[] args) {
+        System.out.println(isMatch("aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"));
+    }
+
+    private static class Node {
+        //false: common data true: list start
+        boolean flag = false;
+        List<Node> nextList = new ArrayList<>();
+        Character value;
+        Node previous;
+
+        public Node() {
+
+        }
+
+        public Node(Node previous, Character value) {
+            this.previous = previous;
+            this.value = value;
+        }
+
+        public Node(Node previos, boolean flag) {
+            this.previous = previos;
+            this.flag = flag;
+        }
+
+        @Override
+        public String toString() {
+            return "Node:" + value;
+        }
+    }
+
+    public static Node getNode(String p) {
+        Node startNode = new Node(null, null);
+        Node node = new Node(startNode, null);
+        startNode.nextList.add(node);
+        for (int i = 0; i < p.length(); i++) {
+            switch (p.charAt(i)) {
+                case '.':
+                    node.value = Character.MAX_VALUE;
+                    node.nextList.add(new Node(node, null));
+                    node = node.nextList.get(0);
+                    break;
+                case '*':
+
+                    Node specialNode = new Node(node.previous.previous, true);
+                    node.previous.previous.nextList.remove(node.previous);
+                    node.previous.previous.nextList.add(specialNode);
+
+                    specialNode.nextList.add(node);
+                    node.previous.nextList.add(specialNode);
+                    node.previous.nextList.remove(node);
+                    specialNode.nextList.add(node.previous);
+                    node.previous = specialNode;
+
+                    break;
+                default:
+                    node.value = p.charAt(i);
+                    node.nextList.add(new Node(node, null));
+                    node = node.nextList.get(0);
+            }
+            node.value = Character.MIN_VALUE;
+
+        }
+        return startNode;
+    }
+
+    public static boolean isMatch(String s, String p) {
+        if (p.length() == 0 && s.length() == 0) {
+            return true;
+        }
+
+        long t = System.currentTimeMillis();
+        Node node = getNode(p);
+
+        if (s.length() == 0) {
+            List<Node> nextSet = node.nextList;
+
+            while (!nextSet.isEmpty()) {
+                List<Node> tmepSet = new ArrayList<>();
+                for (int i = 0; i < nextSet.size(); i++) {
+                    Node m = nextSet.get(i);
+                    if (m.flag) {
+                        tmepSet.addAll(m.nextList);
+                        continue;
+                    } else {
+                        if (m.value == Character.MIN_VALUE) {
+                            return true;
+                        }
+                    }
+                }
+                nextSet = tmepSet;
+            }
+            return false;
+        }
+
+        List<Node> startNode = new ArrayList<>();
+        startNode.addAll(node.nextList);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            System.out.println("current: " + s.charAt(i) + "  startNode value:" + startNode);
+
+            List<Node> nodeSet = new ArrayList<>();
+            nodeSet.addAll(startNode);
+            List<Node> nextNode = new ArrayList<>();
+            int index = 0;
+            while (index < nodeSet.size()) {
+                Node n = nodeSet.get(index);
+                index++;
+                if (n.flag) {
+                    n.nextList.forEach(oneNode -> {
+                        nodeSet.add(oneNode);
+                    });
+                    continue;
+                }
+
+                if (n.value == null || (n.value == s.charAt(i) || n.value == Character.MAX_VALUE)) {
+                    n.nextList.forEach(oneNode -> {
+                        if (!nextNode.contains(oneNode)) {
+                            nextNode.add(oneNode);
+                        }
+                    });
+                }
+            }
+            System.out.println("tempNode:" + "  tempNode value:" + nodeSet);
+            if (nextNode.isEmpty()) {
+                return false;
+            }
+            startNode = nextNode;
+        }
+
+        System.out.println(startNode);
+        System.out.println(System.currentTimeMillis() - t);
+
+        List<Node> nextSet = startNode;
+
+        while (!nextSet.isEmpty()) {
+            List<Node> tmepSet = new ArrayList<>();
+            for (int i = 0; i < nextSet.size(); i++) {
+                Node m = nextSet.get(i);
+                if (m.flag) {
+                    tmepSet.addAll(m.nextList);
+                    continue;
+                } else {
+                    if (m.value == Character.MIN_VALUE) {
+                        return true;
+                    }
+                }
+            }
+            nextSet = tmepSet;
+        }
+        return false;
+    }
+
+}
+
+```
