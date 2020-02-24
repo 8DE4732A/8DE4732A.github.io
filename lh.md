@@ -1795,7 +1795,7 @@ permalink: /lh/
                 clearInterval(intervalId);
             }
         }
-        intervalId = setInterval(heart,300);  //设置间歇调用，间隔为100ms
+        intervalId = setInterval(heart,100);  //设置间歇调用，间隔为100ms
 	}
 	
 	</script>
