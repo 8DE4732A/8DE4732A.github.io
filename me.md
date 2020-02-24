@@ -5,7 +5,7 @@ permalink: /me/
 ---
 <html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Geometrize</title>
+		<title>Me</title>
 	</head>
 
 	<body>
