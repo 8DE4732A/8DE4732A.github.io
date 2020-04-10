@@ -2008,7 +2008,7 @@ permalink: /me/
                 clearInterval(intervalId);
             }
         }
-        intervalId = setInterval(heart,50);  //设置间歇调用，间隔为100ms
+        intervalId = setInterval(heart,25);  //设置间歇调用，间隔为100ms
 	}
 	
 	</script>
