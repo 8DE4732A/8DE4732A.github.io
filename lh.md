@@ -1,5 +1,5 @@
 ---
-layout: html
+layout: page
 title: lh
 permalink: /lh/
 ---

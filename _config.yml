@@ -1,19 +1,17 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Example Site settings
 
-# Site settings
-title: 风中鸷鸟's Blog
-email: liuping@liuping.win
-description: > # this means to ignore newlines until "baseurl:"
-  在这片荒芜之地寻找更好的自己
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://8de4732a.github.io" # the base hostname & protocol for your site
-weibo_username: fireliuping
-github_username:  8de4732a
+#google_analytics: UA-NNNNNNNN-N
 
-# Build settings
-markdown: kramdown
+header_pages:
+  - index.md
+  - blog.md
+  # - about.md
+  - me.md
+
+footer: '在这片荒芜之地寻找更好的自己'
+
+style: dark # dark (default) or light
+#listen_for_clients_preferred_style: true # true or false (default)
+
+#plugins:
+#  - jekyll-seo-tag
