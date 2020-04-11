@@ -9,7 +9,7 @@ permalink: /me/
 	</head>
 
 	<body>
-	<canvas id="myCanvas" width="600" height="600" style="margin: 0 auto;"></canvas>
+	<canvas id="myCanvas" width="300" height="300" style="margin: 0 auto;"></canvas>
 	</body>
 	
 	<script type="text/javascript">
