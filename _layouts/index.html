@@ -12,6 +12,7 @@
       body{
           margin:0;
           background-color: black;
+          align-self: center;
       }
       video{
           position: fixed;
@@ -23,11 +24,17 @@
           z-index: -100; 
           -webkit-filter: grayscale(20%);
       }
+      p {
+        font-size:40px;
+        color:#F00;
+        align-self: center;
+      }
       </style>
   </head>
   
   <body>
-    <video id="video" src="/assets/madmax.mp4" muted autoplay="autoplay" playsinline></video>
+    <p font-size:40px >啥都不是</p>
+    <!-- <video id="video" src="/assets/madmax.mp4" muted autoplay="autoplay" playsinline></video>
     <script>
       let video = document.getElementById('video');
       video.addEventListener('ended', function(e) {
@@ -36,6 +43,6 @@
       });
 
 
-    </script>
+    </script> -->
   </body>
 </html>
