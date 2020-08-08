@@ -35,25 +35,47 @@
         width: 100%;
         color:#F00;
       }
+      iframe {
+        position: absolute;
+        top: 0px;
+        height: calc(100vh);
+        width: 100%;
+      }
+      #close {
+        position: absolute;
+        top: 5px;
+        background-color: black;
+        color: red;
+      }
       </style>
   </head>
   
   <body>
-    <p>啥都不是</p>
+   
+      <iframe id="game" src="tic80.html" title="tic80" hidden>
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+      <button id="close" hidden>关闭</button>
+  
+  
+    <p id="tic80">啥都不是 🎮</p>
     <p>KEEP EAT SHIT💩</p>
     <p style="font-size:10px;color:blue">THINK DIFFERENT⛽</p>
   <div id="copyright">Copyright © 2020 <a href='https://liuping.win'>liuping.win</a> </br>
     <a href='https://github.com/8de4732a'>8de4732a</a>
   </div>
-    <!-- <video id="video" src="/assets/madmax.mp4" muted autoplay="autoplay" playsinline></video>
-    <script>
-      let video = document.getElementById('video');
-      video.addEventListener('ended', function(e) {
-        console.log("end");
-        window.location.href="/blog/";
-      });
+  <script>
+    document.getElementById("tic80").addEventListener("click", function( event ) {
+      document.getElementById("game").removeAttribute("hidden");
+      document.getElementById("close").removeAttribute("hidden");
+    }, false);
+    document.getElementById("close").addEventListener("click", function( event ) {
+      document.getElementById("game").setAttribute("hidden", "hidden");
+      document.getElementById("close").setAttribute("hidden", "hidden");
+    }, false);
 
 
-    </script> -->
+
+  </script>
   </body>
 </html>
