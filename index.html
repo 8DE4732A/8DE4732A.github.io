@@ -54,25 +54,25 @@
   
   <body>
    
-      <iframe id="game" src="tic80.html" title="tic80" hidden>
+      <!-- <iframe id="game" src="tic80.html" title="tic80" hidden>
         <p>Your browser does not support iframes.</p>
       </iframe>
-      <button id="close" hidden>关闭</button>
-    <p>🚀</p>
-    <p id="tic80">KEEP EAT SHIT💩</p>
+      <button id="close" hidden>关闭</button> -->
+    <audio src="岩田恭明 - 厄災ガノン戦・第二形態.mp3" autoplay loop></audio>
+    <p id="music" >🚀</p>
+    <p>KEEP EAT SHIT💩</p>
     <p style="font-size:5px;color:blue;position: absolute;left:10px;">THINK DIFFERENT⛽</p>
   <div id="copyright">Copyright © 2020 <a href='https://liuping.win'style="color: orange;">liuping.win</a> </br>
     <a href='https://github.com/8de4732a' style="color: orange;">8de4732a</a>
   </div>
   <script>
-    document.getElementById("tic80").addEventListener("click", function( event ) {
-      document.getElementById("game").removeAttribute("hidden");
-      document.getElementById("close").removeAttribute("hidden");
+    document.querySelector("body").addEventListener("click", function( event ) {
+      document.querySelector('audio').play();
     }, false);
-    document.getElementById("close").addEventListener("click", function( event ) {
-      document.getElementById("game").setAttribute("hidden", "hidden");
-      document.getElementById("close").setAttribute("hidden", "hidden");
-    }, false);
+    // document.getElementById("close").addEventListener("click", function( event ) {
+    //   document.getElementById("game").setAttribute("hidden", "hidden");
+    //   document.getElementById("close").setAttribute("hidden", "hidden");
+    // }, false);
 
 
 
