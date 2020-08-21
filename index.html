@@ -11,7 +11,8 @@
     <style>
       body{
           margin:0;
-          background-color: black;
+          background-image: url(artbook.jpg);
+          background-position: left;
           align-self: center;
       }
       video{
@@ -26,14 +27,15 @@
       }
       p {
         font-size:140px;
-        color:#F00;
+        color:orange;
         align-self: center;
       }
       #copyright {
-        margin-top: 10px;
+        position: absolute;
+        bottom: 10px;
         text-align: center;
         width: 100%;
-        color:#F00;
+        color:orange;
       }
       iframe {
         position: absolute;
@@ -56,13 +58,11 @@
         <p>Your browser does not support iframes.</p>
       </iframe>
       <button id="close" hidden>关闭</button>
-  
-  
-    <p id="tic80">啥都不是 🎮</p>
-    <p>KEEP EAT SHIT💩</p>
-    <p style="font-size:10px;color:blue">THINK DIFFERENT⛽</p>
-  <div id="copyright">Copyright © 2020 <a href='https://liuping.win'>liuping.win</a> </br>
-    <a href='https://github.com/8de4732a'>8de4732a</a>
+    <p>🚀</p>
+    <p id="tic80">KEEP EAT SHIT💩</p>
+    <p style="font-size:5px;color:blue;position: absolute;left:10px;">THINK DIFFERENT⛽</p>
+  <div id="copyright">Copyright © 2020 <a href='https://liuping.win'style="color: orange;">liuping.win</a> </br>
+    <a href='https://github.com/8de4732a' style="color: orange;">8de4732a</a>
   </div>
   <script>
     document.getElementById("tic80").addEventListener("click", function( event ) {
