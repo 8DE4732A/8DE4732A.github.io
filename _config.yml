@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 风中鸷鸟
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: 刘平
 language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://liuping.win
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -104,3 +104,9 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

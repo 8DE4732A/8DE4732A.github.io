@@ -36,7 +36,7 @@ scrollbar: true
 # 本地搜索,请将索引文件放在网站根目录,或修改主题js文件的path值
 local_search:
     # 是否启用
-    enable: false
+    enable: true
 
 # 是否显示 一言(hitokoto)
 hitokoto: true
@@ -88,7 +88,7 @@ keywords: Fechin
 google_analytics: 
 
 # 网站ico
-favicon: /img/favicon.png
+favicon: /img/favicon.ico
 
 # rss文件
 rss: atom.xml
