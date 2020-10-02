@@ -1,1 +1,1 @@
-<img src='https://api.travis-ci.com/8DE4732A/8DE4732A.github.io.svg'/>
+[![Build Status](https://travis-ci.com/8DE4732A/8DE4732A.github.io.svg?branch=master)](https://travis-ci.com/8DE4732A/8DE4732A.github.io)
