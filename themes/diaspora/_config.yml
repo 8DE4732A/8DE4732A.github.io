@@ -92,7 +92,7 @@ keywords: blog
 google_analytics: 
 
 # 网站ico
-favicon: /img/favicon.ico
+favicon: /img/favicon.png
 
 # rss文件
 rss: atom.xml
