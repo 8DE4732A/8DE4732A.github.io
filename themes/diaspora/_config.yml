@@ -90,7 +90,7 @@ gitalk:
 keywords: blog
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: 
+google_analytics: true
 
 # 网站ico
 favicon: /img/favicon.png
