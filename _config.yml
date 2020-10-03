@@ -4,12 +4,12 @@
 
 # Site
 title: 风中鸷鸟
-subtitle: ''
-description: ''
+subtitle: 'Forever'
+description: 'blog'
 keywords:
 author: 刘平
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'

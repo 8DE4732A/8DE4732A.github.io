@@ -10,20 +10,24 @@ menu:
 TOC: false
 
 # 是否自动播放音乐
-autoplay: false
+autoplay: true
 
 # 默认音乐（随机播放）
 mp3: 
-    - http://link.hhtjim.com/163/425570952.mp3
-    - http://link.hhtjim.com/163/425570952.mp3
+    - audio/鸣小明 - 无人之岛.mp3
+    - audio/片岡真央 - メインテーマ.mp3
 
 # 首页封面图, 为空时取文章的cover作为封面(注意跨域问题,建议使用同源图片)
-welcome_cover: /img/welcome-cover.jpg
+welcome_cover: /img/cover2.jpeg
 
 # 默认文章封面图（随机调用,支持外链）
 cover: 
-  - /img/cover.jpg
-  - /img/welcome-cover.jpg
+  - /img/cover1.jpeg
+  - /img/cover2.jpeg
+  - /img/cover3.jpeg
+  - /img/cover4.jpeg
+  - /img/cover5.jpeg
+  - /img/cover6.jpep
 
  
 # 是否使用mathjax
@@ -43,16 +47,16 @@ hitokoto: true
 
 # 链接(可选:facebook,twitter,github,wechat,email)
 links:
-    facebook: /
-    twitter: /
-    github: /
-    wechat: /img/logo.png
-    email: mailto:xxxx@gmail.com
+    # facebook: /
+    # twitter: /
+    github: https://github.com/8DE4732A
+    # wechat: /img/logo.png
+    email: mailto:liuping@liuping.win
   
 # 备案
 beian: 
     # 是否显示备案信息
-    enable: true
+    enable: false
     # 是否在主页面最底下显示备案信息(虽然丑，但是完全满足规定要求)
     enableFooter: false
     # 备案号
@@ -82,7 +86,7 @@ gitalk:
     distractionFreeMode: false
 
 # 网站关键字
-keywords: Fechin
+keywords: blog
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
