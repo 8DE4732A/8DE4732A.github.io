@@ -5,12 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Archive</title>
+    <title>控制树莓派 - 风中鸷鸟</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="blog,"> 
-    <meta name="description" content="blog,"> 
+    <meta name="description" content="blog,找了一圈没找到一个比较好的能用web控制订阅的工具，自己做一个。中途发现一些比较好的能满足我需求的项目，又参考了一下目前树莓派用于
+
+主路由
+hostapd实现全局代理，并且实现了90DNS用于sw,"> 
     <meta name="author" content="刘平"> 
     <link rel="alternative" href="atom.xml" title="风中鸷鸟" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -33,63 +36,83 @@
 <body class="loading">
     <span id="config-title" style="display:none">风中鸷鸟</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
-    </div>
-    <div class="section">
-        <div class="article">
-            <div class="main">
-                <div class="content">
-                    <div class="timeline">
-                      <h2 class="timeline-title">归档: 6篇</h2><hr>
-                      
-                      
-                        
-                          <h3 class="timeline-subtitle">2020</h3>
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-04</time>
-                          <a target="_self" href="/2020/10/04/doukutsu/">洞窟物语</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-04</time>
-                          <a target="_self" href="/2020/10/04/tic80/">tic80</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-04</time>
-                          <a target="_self" href="/2020/10/04/rasp-ctl/">控制树莓派</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-04</time>
-                          <a target="_self" href="/2020/10/04/802-1-x/">802.1.x认证</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-04</time>
-                          <a target="_self" href="/2020/10/04/primitive/">用几何原语再现图像</a>
-                        </div>
-                      
-                        
-                        <div class="timeline-item">
-                          <time>2020-10-03</time>
-                          <a target="_self" href="/2020/10/03/combain-image/">合并图片</a>
-                        </div>
-                      
-                    </div>
-                </div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://liuping.win"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">控制树莓派</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
+            <div id="qr"></div>
         </div>
     </div>
+    <div class="scrollbar"></div>
 </div>
 
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">控制树莓派</h1>
+        <div class="stuff">
+            <span>十月 04, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/raspberry/" rel="tag">raspberry</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>找了一圈没找到一个比较好的能用web控制订阅的工具，自己做一个。中途发现一些比较好的能满足我需求的<a target="_blank" rel="noopener" href="https://github.com/twotreesus/V2ray.FunPi">项目</a>，又参考了一下<br>目前树莓派用于</p>
+<ul>
+<li>主路由</li>
+<li>hostapd实现全局代理，并且实现了90DNS用于switch</li>
+<li><a target="_blank" rel="noopener" href="http://appdown.rrys.tv/rrshareweb_rpi.2.20.tar.gz">人人影视</a></li>
+<li>文件共享用于小米盒子等播放</li>
+</ul>
+<p><img src="/assets/Screenshot_1.png"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/8DE4732A/rasp_control">https://github.com/8DE4732A/rasp_control</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop src="" data-autoplay="true">
+                <!-- <source type="audio/mpeg" src=""> -->
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/audio/鸣小明 - 无人之岛.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='/audio/片岡真央 - メインテーマ.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
 </body>
 
 

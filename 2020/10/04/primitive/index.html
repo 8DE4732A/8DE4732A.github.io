@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>用几何原语再现图像 - 风中鸷鸟</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="blog,"> 
+    <meta name="description" content="blog,
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535,"> 
+    <meta name="author" content="刘平"> 
+    <link rel="alternative" href="atom.xml" title="风中鸷鸟" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">风中鸷鸟</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://liuping.win"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">用几何原语再现图像</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">用几何原语再现图像</h1>
+        <div class="stuff">
+            <span>十月 04, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><img src="/assets/me_rect.jpg"><br><img src="/assets/me_cricle.jpg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_circle</span>(<span class="params">startX, startY, radius, r, g, b</span>):</span></span><br><span class="line">    pu()</span><br><span class="line">    colormode(<span class="number">255</span>)</span><br><span class="line">    pencolor(r, g, b)</span><br><span class="line">    begin_fill()</span><br><span class="line">    fillcolor((r, g, b))</span><br><span class="line">    goto(startX, startY)</span><br><span class="line">    pd()</span><br><span class="line">    </span><br><span class="line">    circle(radius)</span><br><span class="line">    </span><br><span class="line">    end_fill()</span><br><span class="line">    pu()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">line</span>(<span class="params">startX, startY, endX, endY, r, g, b</span>):</span></span><br><span class="line">    colormode(<span class="number">255</span>)</span><br><span class="line">    pencolor(r, g, b)</span><br><span class="line">    begin_fill()</span><br><span class="line">    fillcolor((r, g, b))</span><br><span class="line">    goto(startX, startY)</span><br><span class="line">    pd()</span><br><span class="line">    forward(abs(endX - startX))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endY - startY))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endX - startX))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endY - startY))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    </span><br><span class="line">    end_fill()</span><br><span class="line">    pu()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rect</span>(<span class="params">startX, startY, endX, endY, r, g, b</span>):</span></span><br><span class="line">    colormode(<span class="number">255</span>)</span><br><span class="line">    pencolor(r, g, b)</span><br><span class="line">    begin_fill()</span><br><span class="line">    fillcolor((r, g, b))</span><br><span class="line">    goto(startX, startY)</span><br><span class="line">    pd()</span><br><span class="line">    forward(abs(endX - startX))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endY - startY))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endX - startX))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    forward(abs(endY - startY))</span><br><span class="line">    right(<span class="number">90</span>)</span><br><span class="line">    </span><br><span class="line">    end_fill()</span><br><span class="line">    pu()</span><br><span class="line"></span><br><span class="line">json = json.loads(jsonStr)</span><br><span class="line">data = json[<span class="string">&quot;shapes&quot;</span>]</span><br><span class="line"></span><br><span class="line">speed(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">s0 = data[<span class="number">0</span>]</span><br><span class="line">pos = s0[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">color = s0[<span class="string">&quot;color&quot;</span>]</span><br><span class="line">rect(pos[<span class="number">0</span>]  - <span class="number">250</span> , -pos[<span class="number">1</span>] + <span class="number">300</span> , pos[<span class="number">2</span>]  - <span class="number">250</span> , -pos[<span class="number">3</span>]  + <span class="number">300</span> , color[<span class="number">0</span>], color[<span class="number">1</span>], color[<span class="number">2</span>])</span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> data[<span class="number">1</span>:]:</span><br><span class="line">    pos = s[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">    color = s[<span class="string">&quot;color&quot;</span>]</span><br><span class="line">    draw_circle(pos[<span class="number">0</span>] - <span class="number">250</span> , -pos[<span class="number">1</span>] + <span class="number">300</span> - pos[<span class="number">2</span>] , pos[<span class="number">2</span>] , color[<span class="number">0</span>], color[<span class="number">1</span>], color[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/me.jpg"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> drawing=<span class="built_in">document</span>.getElementById(<span class="string">&quot;myCanvas&quot;</span>);</span><br><span class="line">	<span class="keyword">if</span> (drawing.getContext)&#123;</span><br><span class="line">		<span class="keyword">var</span> ctx = drawing.getContext(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">heart</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> arrays = data[<span class="string">&quot;shapes&quot;</span>];</span><br><span class="line">		<span class="keyword">var</span> pos = arrays[index][<span class="string">&quot;data&quot;</span>];</span><br><span class="line">		<span class="keyword">var</span> color = arrays[index][<span class="string">&quot;color&quot;</span>];</span><br><span class="line">		<span class="keyword">var</span> type = arrays[index][<span class="string">&quot;type&quot;</span>];</span><br><span class="line">		<span class="keyword">switch</span>(type)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>: </span><br><span class="line">		ctx.fillStyle = <span class="string">&quot;rgba(&quot;</span> + color[<span class="number">0</span>] + <span class="string">&quot;, &quot;</span>+ color[<span class="number">1</span>] + <span class="string">&quot;,  &quot;</span>+ color[<span class="number">2</span>] + <span class="string">&quot;, &quot;</span> + color[<span class="number">3</span>] / <span class="number">255</span> + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">		ctx.fillRect (pos[<span class="number">0</span>] , pos[<span class="number">1</span>] ,(pos[<span class="number">2</span>] - pos[<span class="number">0</span>]) , (pos[<span class="number">3</span>] - pos[<span class="number">1</span>]));</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">32</span>:</span><br><span class="line">          ctx.fillStyle = <span class="string">&quot;rgba(&quot;</span> + color[<span class="number">0</span>] + <span class="string">&quot;, &quot;</span>+ color[<span class="number">1</span>] + <span class="string">&quot;,  &quot;</span>+ color[<span class="number">2</span>] + <span class="string">&quot;, &quot;</span> + color[<span class="number">3</span>] / <span class="number">255</span> + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">		   ctx.beginPath();</span><br><span class="line">		   ctx.arc(pos[<span class="number">0</span>] ,pos[<span class="number">1</span>] ,pos[<span class="number">2</span>] ,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI);</span><br><span class="line">		   ctx.fill();</span><br><span class="line">		   <span class="keyword">break</span>;</span><br><span class="line">		   <span class="comment">//case 64:</span></span><br><span class="line">		   <span class="comment">//ctx.strokeStyle=&quot;rgba(&quot; + color[0] + &quot;, &quot;+ color[1] + &quot;,  &quot;+ color[2] + &quot;, &quot; + color[3] / 255 + &quot;)&quot;;</span></span><br><span class="line">		   <span class="comment">//ctx.beginPath();</span></span><br><span class="line">		   <span class="comment">//ctx.moveTo(n.get_x1(a),n.get_y1(a));</span></span><br><span class="line">		   <span class="comment">//ctx.lineTo(n.get_x2(a),n.get_y2(a));</span></span><br><span class="line">		   <span class="comment">//ctx.stroke();</span></span><br><span class="line">		   <span class="comment">//break; --&gt;</span></span><br><span class="line">		   &#125;</span><br><span class="line">            index++;</span><br><span class="line">            <span class="keyword">if</span> (index &gt; arrays.length)&#123;</span><br><span class="line">                <span class="built_in">clearInterval</span>(intervalId);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        intervalId = <span class="built_in">setInterval</span>(heart,<span class="number">25</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/fogleman/primitive">https://github.com/fogleman/primitive</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.samcodes.co.uk/project/geometrize-haxe-web/">https://www.samcodes.co.uk/project/geometrize-haxe-web/</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop src="" data-autoplay="true">
+                <!-- <source type="audio/mpeg" src=""> -->
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/audio/鸣小明 - 无人之岛.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='/audio/片岡真央 - メインテーマ.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<!-- <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'true', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- End Google Analytics -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?fe5f276659390db1d91efb0420290c52";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>  
+
+
+</html>
