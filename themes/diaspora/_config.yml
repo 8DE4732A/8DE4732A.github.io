@@ -23,12 +23,11 @@ welcome_cover: /img/cover2.jpeg
 # 默认文章封面图（随机调用,支持外链）
 cover: 
   - /img/cover1.jpeg
-  - /img/cover2.jpeg
   - /img/cover3.jpeg
   - /img/cover4.jpeg
   - /img/cover5.jpeg
-  - /img/cover6.jpep
-  - /img/cover7.jpep
+  - /img/cover6.jpeg
+  - /img/cover7.jpeg
 
  
 # 是否使用mathjax
