@@ -72,12 +72,35 @@
     <title>洞窟物语</title>
     <url>/2020/10/04/doukutsu/</url>
     <content><![CDATA[<p>Remaking Cavestory in C++<br><a href="https://www.youtube.com/watch?v=ETvApbD5xRo&list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa">https://www.youtube.com/watch?v=ETvApbD5xRo&amp;list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa</a></p>
+<p>我想用go语言写一个。。。</p>
 ]]></content>
       <categories>
         <category>game</category>
       </categories>
       <tags>
         <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>气象云图</title>
+    <url>/2020/10/04/china-weather/</url>
+    <content><![CDATA[<p>发现<a href="http://www.weather.com.cn/satellite/">中国天气网</a>的气象云图挺好看的，vps上搞了个定时任务，抓取图片，生成视频</p>
+<p>定时抓取</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">req = urllib.request.Request(<span class="string">&quot;http://d1.weather.com.cn/satellite2015/JC_YT_DL_WXZXCSYT_4A.html?jsoncallback=readSatellite&amp;callback=jQuery18208455971171376718_&quot;</span> + str(round(time.time() * <span class="number">1000</span>)) + <span class="string">&quot;&amp;_=&quot;</span> + str(round(time.time() * <span class="number">1000</span>)))</span><br><span class="line">req.add_header(<span class="string">&#x27;Referer&#x27;</span>, <span class="string">&#x27;http://www.weather.com.cn/satellite/&#x27;</span>)</span><br><span class="line">req.add_header(<span class="string">&#x27;User-Agent&#x27;</span>, <span class="string">&#x27;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> urllib.request.urlopen(req) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read().decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    data = data[<span class="number">14</span>:<span class="number">-1</span>]</span><br><span class="line">    j = json.loads(data.replace(<span class="string">&#x27;\&#x27;&#x27;</span>,<span class="string">&#x27;\&quot;&#x27;</span>))</span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> j[<span class="string">&#x27;radars&#x27;</span>]:</span><br><span class="line">        print(a[<span class="string">&#x27;ft&#x27;</span>])</span><br><span class="line">        urllib.request.urlretrieve(<span class="string">&quot;http://pi.weather.com.cn/i/product/pic/l/sevp_nsmc_&quot;</span> + a[<span class="string">&#x27;fn&#x27;</span>] + <span class="string">&quot;_lno_py_&quot;</span> + a[<span class="string">&#x27;ft&#x27;</span>] + <span class="string">&quot;.jpg&quot;</span>, <span class="string">&quot;D://weather/&quot;</span> + a[<span class="string">&#x27;ft&#x27;</span>] + <span class="string">&quot;.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>生成图片<br>先创建软链接用于ffmpeg</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line">p = Path(<span class="string">&#x27;D:\weather&#x27;</span>)</span><br><span class="line">file_names = [x.name <span class="keyword">for</span> x <span class="keyword">in</span> p.iterdir()]</span><br><span class="line">nums = sorted([x.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>] <span class="keyword">for</span> x <span class="keyword">in</span> file_names])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">    Path(<span class="string">&#x27;D:\weather-ffmpeg\\&#x27;</span> + <span class="string">&#x27;&#123;0:06d&#125;&#x27;</span>.format(i) + <span class="string">&#x27;.jpg&#x27;</span>).symlink_to(<span class="string">&#x27;D:\weather\\&#x27;</span> + nums[i] + <span class="string">&#x27;.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/root/ffmpeg/ffmpeg -f image2 -i /root/weather-ffmpeg/%06d.jpg -vcodec libx264 -r 10 /var/http/weather.mp4</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="https://github.com/8DE4732A/china-weather">https://github.com/8DE4732A/china-weather</a></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>
