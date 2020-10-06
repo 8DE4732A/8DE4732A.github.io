@@ -71,7 +71,7 @@
   <entry>
     <title>洞窟物语</title>
     <url>/2020/10/04/doukutsu/</url>
-    <content><![CDATA[<p>Remaking Cavestory in C++<br><a href="https://www.youtube.com/watch?v=ETvApbD5xRo&list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa">https://www.youtube.com/watch?v=ETvApbD5xRo&amp;list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa</a></p>
+    <content><![CDATA[<p>Remaking Cavestory in C++<br><a href="https://youtu.be/ETvApbD5xRo">https://youtu.be/ETvApbD5xRo</a></p>
 <p>我想用go语言写一个。。。</p>
 ]]></content>
       <categories>
@@ -110,5 +110,18 @@
 <p><img src="/assets/zuifuli.jpg"></p>
 <p><a href="https://github.com/8DE4732A/zufuli_jd">https://github.com/8DE4732A/zufuli_jd</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>nes模拟器</title>
+    <url>/2020/10/06/nes-emulator/</url>
+    <content><![CDATA[<p>youtube教程<br><a href="https://youtu.be/nViZg02IMQo">https://youtu.be/nViZg02IMQo</a><br>一个用go语言实现的<br><a href="https://github.com/rbaron/awesomenes">https://github.com/rbaron/awesomenes</a><br>硬件参考信息来源<br><a href="http://nesdev.com/">http://nesdev.com/</a></p>
+<p>待续。</p>
+]]></content>
+      <categories>
+        <category>game</category>
+      </categories>
+      <tags>
+        <tag>game</tag>
+      </tags>
   </entry>
 </search>
