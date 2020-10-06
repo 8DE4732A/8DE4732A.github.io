@@ -8,7 +8,7 @@ cover:
 ---
 
 Remaking Cavestory in C++
-[https://www.youtube.com/watch?v=ETvApbD5xRo&list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa](https://www.youtube.com/watch?v=ETvApbD5xRo&list=PLNOBk_id22bw6LXhrGfhVwqQIa-M2MsLa)
+[https://youtu.be/ETvApbD5xRo](https://youtu.be/ETvApbD5xRo)
 
 
 我想用go语言写一个。。。
