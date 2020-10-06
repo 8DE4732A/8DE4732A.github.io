@@ -114,7 +114,7 @@
   <entry>
     <title>nes模拟器</title>
     <url>/2020/10/06/nes-emulator/</url>
-    <content><![CDATA[<p>youtube教程<br><a href="https://youtu.be/nViZg02IMQo">https://youtu.be/nViZg02IMQo</a><br>一个用go语言实现的<br><a href="https://github.com/rbaron/awesomenes">https://github.com/rbaron/awesomenes</a><br>硬件参考信息来源<br><a href="http://nesdev.com/">http://nesdev.com/</a></p>
+    <content><![CDATA[<p>youtube教程<br><a href="https://youtu.be/nViZg02IMQo">https://youtu.be/nViZg02IMQo</a><br>一个用go语言实现的<br><a href="https://github.com/rbaron/awesomenes">https://github.com/rbaron/awesomenes</a><br><a href="https://github.com/fogleman/nes">https://github.com/fogleman/nes</a><br>硬件参考信息来源<br><a href="http://nesdev.com/">http://nesdev.com/</a></p>
 <p>待续。</p>
 ]]></content>
       <categories>
