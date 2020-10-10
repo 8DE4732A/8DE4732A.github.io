@@ -119,6 +119,7 @@
     <url>/2020/10/06/nes-emulator/</url>
     <content><![CDATA[<p>youtube教程<br><a href="https://youtu.be/nViZg02IMQo">https://youtu.be/nViZg02IMQo</a></p>
 <p>一个用go语言实现的<br><a href="https://github.com/rbaron/awesomenes">https://github.com/rbaron/awesomenes</a><br><a href="https://github.com/fogleman/nes">https://github.com/fogleman/nes</a></p>
+<p>A JavaScript NES emulator.<br><a href="https://github.com/bfirsh/jsnes">https://github.com/bfirsh/jsnes</a></p>
 <p>硬件参考信息来源<br><a href="http://nesdev.com/">http://nesdev.com/</a></p>
 <p>待续。</p>
 ]]></content>
@@ -127,6 +128,19 @@
       </categories>
       <tags>
         <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>6502</title>
+    <url>/2020/10/08/6502/</url>
+    <content><![CDATA[<p>硬件参考资料<br><a href="http://www.6502.org/">http://www.6502.org/</a></p>
+<p>一个java实现的6502模拟器<br><a href="https://github.com/sethm/symon">https://github.com/sethm/symon</a></p>
+]]></content>
+      <categories>
+        <category>old-computer</category>
+      </categories>
+      <tags>
+        <tag>old-computer</tag>
       </tags>
   </entry>
 </search>
