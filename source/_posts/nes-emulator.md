@@ -14,6 +14,9 @@ youtube教程
 [https://github.com/rbaron/awesomenes](https://github.com/rbaron/awesomenes)
 [https://github.com/fogleman/nes](https://github.com/fogleman/nes)
 
+A JavaScript NES emulator.
+[https://github.com/bfirsh/jsnes](https://github.com/bfirsh/jsnes)
+
 硬件参考信息来源
 [http://nesdev.com/](http://nesdev.com/)
 
