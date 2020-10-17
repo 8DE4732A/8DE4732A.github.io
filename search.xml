@@ -143,4 +143,30 @@
         <tag>old-computer</tag>
       </tags>
   </entry>
+  <entry>
+    <title>人人影视</title>
+    <url>/2020/10/17/rrys/</url>
+    <content><![CDATA[<p>树莓派接入了两个isp(长城宽带，移动),由于长城宽带限制，使用人人影视时只想用移动的网。<br>使用的方案可以用veth，使用不同的网路命名空间加iptables, 还有直接借用docker</p>
+<p>使用docker解决此问题</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">18.04</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> maintainer <span class="string">&quot;8de4732a&quot;</span></span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3001</span></span><br><span class="line"><span class="keyword">VOLUME</span><span class="bash"> [<span class="string">&quot;/opt/work/rrshareweb/data&quot;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /rrys</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt update &amp;&amp; apt -y install wget &amp;&amp; wget http://appdown.rrys.tv/rrshareweb_rpi.2.20.tar.gz &amp;&amp; tar -zxf rrshareweb_rpi.2.20.tar.gz</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">&quot;/rrys/rrshareweb_rpi/rrshareweb&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker build . -t rrys:0.0.1</span><br></pre></td></tr></table></figure>
+<p>alpine启动不了，只能用ubuntu了</p>
+<p>启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -it -v /mnt/sd/rrys:/opt/work/rrshareweb/data -p 3001:3001 -name rrys rrys:0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>设置路由规则</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ip route add default via 192.168.1.1 dev wlan1 table 100</span><br><span class="line">ip route add 192.168.99.0&#x2F;24 via 192.168.1.1 dev eth0 table 100</span><br><span class="line">ip rule add from 172.17.0.0&#x2F;16 table 100</span><br><span class="line"></span><br><span class="line">或者利用MARK</span><br><span class="line">iptables -A PREROUTING -t mangle -s 172.17.0.0&#x2F;16 -j MARK --set-mark 3</span><br><span class="line">ip rule add fwmark 3 table 100</span><br></pre></td></tr></table></figure>
+
+
+<p>参考</p>
+<p><a href="http://linux-ip.net/html/tools-ip-routing.html">http://linux-ip.net/html/tools-ip-routing.html</a></p>
+<p><a href="http://www.study-area.org/tips/adv-route/Adv-Routing-HOWTO-4.html">http://www.study-area.org/tips/adv-route/Adv-Routing-HOWTO-4.html</a></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>
