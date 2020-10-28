@@ -12,7 +12,7 @@ import cv2
 import os
 from pathlib import Path
 
-IMAGE_PATH = "luhan1994.github.io/assets/"
+IMAGE_PATH = "assets/"
 
 p = Path(IMAGE_PATH)
 file_names = [x.name for x in p.iterdir()]
