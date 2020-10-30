@@ -185,4 +185,17 @@
         <tag>linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>tempermonkey</title>
+    <url>/2020/10/30/tempermonkey/</url>
+    <content><![CDATA[<p>恰到好处的油猴</p>
+<p><a href="http://woshicver.com/">http://woshicver.com/</a> 去除关注</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ==UserScript==</span></span><br><span class="line"><span class="comment">// @name         New Userscript</span></span><br><span class="line"><span class="comment">// @namespace    http://tampermonkey.net/</span></span><br><span class="line"><span class="comment">// @version      0.1</span></span><br><span class="line"><span class="comment">// @description  try to take over the world!</span></span><br><span class="line"><span class="comment">// @author       You</span></span><br><span class="line"><span class="comment">// @match        http://woshicver.com/ThirdSection/*</span></span><br><span class="line"><span class="comment">// @grant        none</span></span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    &#x27;use strict&#x27;</span>;</span><br><span class="line">    $(<span class="string">&#x27;#read-more-mask&#x27;</span>).remove();</span><br><span class="line">    $(<span class="string">&#x27;#read-more-wrap&#x27;</span>).remove();</span><br><span class="line">    <span class="keyword">var</span> style = $(<span class="string">&#x27;#main&#x27;</span>).first().attr(<span class="string">&quot;style&quot;</span>);</span><br><span class="line">    $(<span class="string">&#x27;#main&#x27;</span>).attr(<span class="string">&quot;style&quot;</span>, style.replace(<span class="regexp">/hidden/</span>, <span class="string">&quot;false&quot;</span>));</span><br><span class="line">    $(<span class="string">&#x27;footer&#x27;</span>).remove();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
 </search>
