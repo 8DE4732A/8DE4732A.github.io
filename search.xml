@@ -144,6 +144,20 @@
       </tags>
   </entry>
   <entry>
+    <title>hackintosh</title>
+    <url>/2020/11/03/hackintosh/</url>
+    <content><![CDATA[<h4 id="system-image"><a href="#system-image" class="headerlink" title="system image"></a>system image</h4><p><a href="cloud.189.cn/t/EJBRvqqmmiAb">10.15.7 (19H2)</a><br>password: 6fhv</p>
+<h4 id="efi"><a href="#efi" class="headerlink" title="efi"></a>efi</h4><p><a href="https://github.com/sineline/Thinkpad-x270-i5-6200U-HD520-Clover">x270</a></p>
+<p>[HP 15-ak039TX (950M/GTX)])[<a href="https://github.com/lgs3137/PAVILION_Gaming_NB-macOS]">https://github.com/lgs3137/PAVILION_Gaming_NB-macOS]</a></p>
+]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>opencv</title>
     <url>/2020/10/28/opencv/</url>
     <content><![CDATA[<h3 id="人脸检测"><a href="#人脸检测" class="headerlink" title="人脸检测"></a>人脸检测</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line">IMAGE_PATH = <span class="string">&quot;assets/&quot;</span></span><br><span class="line"></span><br><span class="line">p = Path(IMAGE_PATH)</span><br><span class="line">file_names = [x.name <span class="keyword">for</span> x <span class="keyword">in</span> p.iterdir()]</span><br><span class="line"><span class="keyword">for</span> file_name <span class="keyword">in</span> file_names:</span><br><span class="line">    img = cv2.imread(IMAGE_PATH + file_name)</span><br><span class="line">    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">    face_cascade = cv2.CascadeClassifier(</span><br><span class="line">        cv2.data.haarcascades + <span class="string">&#x27;haarcascade_frontalface_alt.xml&#x27;</span>)</span><br><span class="line">    faces = face_cascade.detectMultiScale(</span><br><span class="line">        gray, scaleFactor=<span class="number">1.2</span>, minNeighbors=<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</span><br><span class="line">        img = cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line">        cv2.imwrite(IMAGE_PATH + file_name, img)</span><br></pre></td></tr></table></figure>
