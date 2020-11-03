@@ -16,5 +16,5 @@ password: 6fhv
 
 [x270](https://github.com/sineline/Thinkpad-x270-i5-6200U-HD520-Clover)
 
-[HP 15-ak039TX (950M/GTX)])[https://github.com/lgs3137/PAVILION_Gaming_NB-macOS]
+[HP 15-ak039TX (950M/GTX)][https://github.com/lgs3137/PAVILION_Gaming_NB-macOS]
 
