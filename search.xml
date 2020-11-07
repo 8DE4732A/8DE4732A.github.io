@@ -158,6 +158,21 @@
       </tags>
   </entry>
   <entry>
+    <title>蚂蚁笔记</title>
+    <url>/2020/11/07/leanote/</url>
+    <content><![CDATA[<p>安装蚂蚁笔记</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">启动专属mongo</span></span><br><span class="line">docker run -d -p 37017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password -v /opt/leanote/mongo:/data/db --name leanote_mongo --restart always mongo:latest</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">修改app.conf</span></span><br><span class="line">vim /opt/leanote/app.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">创建leanote文件夹</span></span><br><span class="line">mkdir -p leanote-data/&#123;files,mongodb_backup,public/upload&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">启动leanote 应该使用birdge网络 用nginx 代理</span></span><br><span class="line">docker run -d -v /opt/leanote/app.conf:/leanote/conf/app.conf -v /opt/leanote/leanote-data:/leanote/data --name leanote --network host --restart always jim3ma/leanote</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hub.docker.com/r/jim3ma/leanote">https://hub.docker.com/r/jim3ma/leanote</a></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>opencv</title>
     <url>/2020/10/28/opencv/</url>
     <content><![CDATA[<h3 id="人脸检测"><a href="#人脸检测" class="headerlink" title="人脸检测"></a>人脸检测</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line">IMAGE_PATH = <span class="string">&quot;assets/&quot;</span></span><br><span class="line"></span><br><span class="line">p = Path(IMAGE_PATH)</span><br><span class="line">file_names = [x.name <span class="keyword">for</span> x <span class="keyword">in</span> p.iterdir()]</span><br><span class="line"><span class="keyword">for</span> file_name <span class="keyword">in</span> file_names:</span><br><span class="line">    img = cv2.imread(IMAGE_PATH + file_name)</span><br><span class="line">    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">    face_cascade = cv2.CascadeClassifier(</span><br><span class="line">        cv2.data.haarcascades + <span class="string">&#x27;haarcascade_frontalface_alt.xml&#x27;</span>)</span><br><span class="line">    faces = face_cascade.detectMultiScale(</span><br><span class="line">        gray, scaleFactor=<span class="number">1.2</span>, minNeighbors=<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">for</span> (x, y, w, h) <span class="keyword">in</span> faces:</span><br><span class="line">        img = cv2.rectangle(img, (x, y), (x + w, y + h), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">1</span>)</span><br><span class="line">        cv2.imwrite(IMAGE_PATH + file_name, img)</span><br></pre></td></tr></table></figure>
