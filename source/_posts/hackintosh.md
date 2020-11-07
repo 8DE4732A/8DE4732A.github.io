@@ -8,13 +8,13 @@ cover:
 ---
 
 #### system image
-
-[10.15.7 (19H2)](cloud.189.cn/t/EJBRvqqmmiAb) 
+10.15.7 (19H2)
+[cloud.189.cn/t/EJBRvqqmmiAb](cloud.189.cn/t/EJBRvqqmmiAb) 
 password: 6fhv
 
 #### efi
 
-[x270](https://github.com/sineline/Thinkpad-x270-i5-6200U-HD520-Clover)
+[Thinkpad x270](https://github.com/sineline/Thinkpad-x270-i5-6200U-HD520-Clover)
 
-[HP 15-ak039TX (950M/GTX)][https://github.com/lgs3137/PAVILION_Gaming_NB-macOS]
+[HP 15-ak039TX (950M/GTX)](https://github.com/lgs3137/PAVILION_Gaming_NB-macOS)
 
