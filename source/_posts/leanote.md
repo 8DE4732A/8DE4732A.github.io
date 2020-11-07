@@ -24,3 +24,6 @@ docker run -d -v /opt/leanote/app.conf:/leanote/conf/app.conf -v /opt/leanote/le
 ```
 
 [https://hub.docker.com/r/jim3ma/leanote](https://hub.docker.com/r/jim3ma/leanote)
+
+
+ 不好用 发现已经凉凉了 
