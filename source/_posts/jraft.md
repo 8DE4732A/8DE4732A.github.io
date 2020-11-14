@@ -95,6 +95,8 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 ![](/assets/rate.png)
 
 
+其他的执行比如 partition-test 需要iptables, docker能力有限，只能用虚拟机了.
+
 #### 后记
 
 
