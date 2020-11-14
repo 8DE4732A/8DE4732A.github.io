@@ -183,14 +183,14 @@
 <li>jepsen不支持新的openssh生成的key <a href="https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch">https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch</a></li>
 <li>没办法在aarch64架构上运行 由于rocksdb <a href="https://github.com/facebook/rocksdb/issues/5559">https://github.com/facebook/rocksdb/issues/5559</a></li>
 </ol>
-<blockquote>
-</blockquote>
-<pre><code>configuration-test: remove and add a random node.
-bridge-test: weaving the network into happy little intersecting majority rings
-pause-test: pausing random node with SIGSTOP/SIGCONT.
-crash-test: killing random nodes and restarting them.
-partition-test: Cuts the network into randomly chosen halves.
-partition-majority-test: Cuts the network into randomly majority groups.</code></pre>
+<ul>
+<li>configuration-test: remove and add a random node.</li>
+<li>bridge-test: weaving the network into happy little intersecting majority rings</li>
+<li>pause-test: pausing random node with SIGSTOP/SIGCONT.</li>
+<li>crash-test: killing random nodes and restarting them.</li>
+<li>partition-test: Cuts the network into randomly chosen halves.</li>
+<li>partition-majority-test: Cuts the network into randomly majority groups.</li>
+</ul>
 <h5 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h5><p>执行<code>bash run_test.sh --testfn configuration-test</code>后</p>
 <p><img src="/assets/2020-11-15-1.png"><br><img src="/assets/2020-11-15-2.png"><br><img src="/assets/latency-quantiles.png"><br><img src="/assets/latency-raw.png"><br><img src="/assets/rate.png"></p>
 <p>其他的执行比如 partition-test 需要iptables, docker能力有限，只能用虚拟机了.</p>
