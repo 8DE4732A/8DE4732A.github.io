@@ -75,8 +75,24 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 6. jepsen不支持新的openssh生成的key [https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch](https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch)
 7. 没办法在aarch64架构上运行 由于rocksdb [https://github.com/facebook/rocksdb/issues/5559](https://github.com/facebook/rocksdb/issues/5559)
 
+> 
+    configuration-test: remove and add a random node.
+    bridge-test: weaving the network into happy little intersecting majority rings
+    pause-test: pausing random node with SIGSTOP/SIGCONT.
+    crash-test: killing random nodes and restarting them.
+    partition-test: Cuts the network into randomly chosen halves.
+    partition-majority-test: Cuts the network into randomly majority groups.
+
+##### 结果
 
 
+执行```bash run_test.sh --testfn configuration-test```后
+
+![](/assets/2020-11-15 00-38-58屏幕截图.png)
+![](/assets/2020-11-15 00-39-42屏幕截图.png)
+![](/assets/latency-quantiles.png)
+![](/assets/latency-raw.png)
+![](/assets/rate.png)
 
 
 #### 后记
