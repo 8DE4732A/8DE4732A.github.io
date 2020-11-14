@@ -192,7 +192,7 @@ crash-test: killing random nodes and restarting them.
 partition-test: Cuts the network into randomly chosen halves.
 partition-majority-test: Cuts the network into randomly majority groups.</code></pre>
 <h5 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h5><p>执行<code>bash run_test.sh --testfn configuration-test</code>后</p>
-<p>![](/assets/2020-11-15 00-38-58屏幕截图.png)<br>![](/assets/2020-11-15 00-39-42屏幕截图.png)<br><img src="/assets/latency-quantiles.png"><br><img src="/assets/latency-raw.png"><br><img src="/assets/rate.png"></p>
+<p><img src="/assets/2020-11-15-1.png"><br><img src="/assets/2020-11-15-2.png"><br><img src="/assets/latency-quantiles.png"><br><img src="/assets/latency-raw.png"><br><img src="/assets/rate.png"></p>
 <h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><blockquote>
 <p>参考:<br><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a><br><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></p>
 </blockquote>
