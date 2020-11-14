@@ -88,8 +88,8 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 
 执行```bash run_test.sh --testfn configuration-test```后
 
-![](/assets/2020-11-15 00-38-58屏幕截图.png)
-![](/assets/2020-11-15 00-39-42屏幕截图.png)
+![](/assets/2020-11-15-1.png)
+![](/assets/2020-11-15-2.png)
 ![](/assets/latency-quantiles.png)
 ![](/assets/latency-raw.png)
 ![](/assets/rate.png)
