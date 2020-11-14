@@ -158,6 +158,33 @@
       </tags>
   </entry>
   <entry>
+    <title>一致性协议(jraft)</title>
+    <url>/2020/11/12/jraft/</url>
+    <content><![CDATA[<h4 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h4><h5 id="线型一致性"><a href="#线型一致性" class="headerlink" title="线型一致性"></a>线型一致性</h5><h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><h5 id="jepsen"><a href="#jepsen" class="headerlink" title="jepsen"></a>jepsen</h5><p>使用docer部署5个节点 和 一个控制端</p>
+<p>Dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> debian</span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> Description=<span class="string">&quot;This image is used to test jepsen for jraft&quot;</span></span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /root</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt update &amp;&amp; \</span></span><br><span class="line"><span class="bash">	apt install -y openssh-server &amp;&amp; \</span></span><br><span class="line"><span class="bash">	apt install -y openjdk-11-jre &amp;&amp; \</span></span><br><span class="line"><span class="bash">	apt install -y curl &amp;&amp; \</span></span><br><span class="line"><span class="bash">	curl -O https://download.clojure.org/install/linux-install-1.10.1.727.sh &amp;&amp;\</span></span><br><span class="line"><span class="bash">	chmod +x linux-install-1.10.1.727.sh &amp;&amp; \</span></span><br><span class="line"><span class="bash">	./linux-install-1.10.1.727.sh &amp;&amp; \</span></span><br><span class="line"><span class="bash">	useradd -d /home/admin -g root -s /bin/bash -m admin &amp;&amp; \</span></span><br><span class="line"><span class="bash">	mkdir /home/admin/.ssh </span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> authorized_keys /home/admin/.ssh/authorized_keys</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> bin/ /root</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> id_rsa /root/.ssh/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> id_rsa.pub /root/.ssh/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> sofa-jraft-jepsen-master/ /root/</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> service ssh start &amp;&amp; \</span></span><br><span class="line"><span class="bash">    <span class="built_in">export</span> PATH=/root/bin:<span class="variable">$PATH</span> &amp;&amp; \</span></span><br><span class="line"><span class="bash">    tail -f /var/<span class="built_in">log</span>/dpkg.log</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">&quot;bash&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>容器的名字要跟 nodes 和 project.cli 记录的一致</li>
+</ul>
+<p>问题</p>
+<ol>
+<li>apache-codec/commons-codec/1.2/commons-codec-1.2.jar 拉不下来<br>project.cli 增加 :repositories [[“alibaba” “<a href="http://maven.aliyun.com/nexus/content/groups/public&quot;]]">http://maven.aliyun.com/nexus/content/groups/public&quot;]]</a></li>
+<li>error=’Not enough space’ (errno=12) 内存不够<br>project.cli 修改 :jvm-opts [“-Xms1g” “-Xmx1g” “-server” “-XX:+UseG1GC”]</li>
+<li>java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter 还是用openjdk-8吧</li>
+</ol>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><blockquote>
+<p>参考:<br><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a><br><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>蚂蚁笔记</title>
     <url>/2020/11/07/leanote/</url>
     <content><![CDATA[<p>安装蚂蚁笔记</p>
