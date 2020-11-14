@@ -73,6 +73,8 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 4. Unrecognized option: -client control 脚本里-client参数 去除
 5. 准备好http_proxy
 6. jepsen不支持新的openssh生成的key [https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch](https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch)
+7. 没办法在aarch64架构上运行 由于rocksdb [https://github.com/facebook/rocksdb/issues/5559](https://github.com/facebook/rocksdb/issues/5559)
+
 
 
 
