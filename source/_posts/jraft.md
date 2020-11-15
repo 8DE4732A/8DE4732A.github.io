@@ -31,13 +31,17 @@ FROM ubuntu:18.04
 LABEL Description="This image is used to test jepsen for jraft"
 WORKDIR /root
 RUN apt update && \
+	apt install -y sudo && \
 	apt install -y openssh-server && \
 	apt install -y openjdk-8-jre && \
-	apt install -y curl
+	apt install -y curl && \
+	apt install -y iptables && \
+	apt install -y gnuplot
 RUN	curl -O https://download.clojure.org/install/linux-install-1.10.1.727.sh &&\
 	chmod +x linux-install-1.10.1.727.sh && \
 	./linux-install-1.10.1.727.sh && \
 	useradd -d /home/admin -g root -s /bin/bash -m admin && \
+	echo "admin ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
 	mkdir /home/admin/.ssh 
 COPY --chown=admin:root authorized_keys /home/admin/.ssh/authorized_keys
 COPY --chown=root:root id_rsa /root/.ssh/
@@ -45,9 +49,9 @@ COPY --chown=root:root id_rsa.pub /root/.ssh/
 COPY sofa-jraft-jepsen-master/ /root/
 COPY /bin /usr/bin
 ENTRYPOINT service ssh start && \
-	export PATH=/root/bin:$PATH && \
 	tail -f /var/log/dpkg.log
 CMD ["bash"]
+
 ```
 
 启动容器
@@ -75,12 +79,6 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 6. jepsen不支持新的openssh生成的key [https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch](https://stackoverflow.com/questions/53134212/invalid-privatekey-when-using-jsch)
 7. 没办法在aarch64架构上运行 由于rocksdb [https://github.com/facebook/rocksdb/issues/5559](https://github.com/facebook/rocksdb/issues/5559)
 
-* configuration-test: remove and add a random node.
-* bridge-test: weaving the network into happy little intersecting majority rings
-* pause-test: pausing random node with SIGSTOP/SIGCONT.
-* crash-test: killing random nodes and restarting them.
-* partition-test: Cuts the network into randomly chosen halves.
-* partition-majority-test: Cuts the network into randomly majority groups.
 
 ##### 结果
 
@@ -94,7 +92,17 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 ![](/assets/rate.png)
 
 
-其他的执行比如 partition-test 需要iptables, docker能力有限，只能用虚拟机了.
+所有测试均能通过
+* configuration-test: remove and add a random node.
+* bridge-test: weaving the network into happy little intersecting majority rings
+* pause-test: pausing random node with SIGSTOP/SIGCONT.
+* crash-test: killing random nodes and restarting them.
+* partition-test: Cuts the network into randomly chosen halves.
+* partition-majority-test: Cuts the network into randomly majority groups.
+
+
+所有文件在[https://github.com/8DE4732A/sofa-jraft-jepsen](https://github.com/8DE4732A/sofa-jraft-jepsen)
+
 
 #### 后记
 
