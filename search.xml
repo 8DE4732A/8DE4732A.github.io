@@ -160,7 +160,11 @@
   <entry>
     <title>一致性协议(raft)</title>
     <url>/2020/11/12/jraft/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h2 id="线型一致性"><a href="#线型一致性" class="headerlink" title="线型一致性"></a>线型一致性</h2><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><h3 id="jepsen"><a href="#jepsen" class="headerlink" title="jepsen"></a>jepsen</h3><p><a href="https://github.com/jepsen-io/jepsen">https://github.com/jepsen-io/jepsen</a></p>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>分布式保证一致性</p>
+<h2 id="线型一致性"><a href="#线型一致性" class="headerlink" title="线型一致性"></a>线型一致性</h2><p>Linearizability<br>线性一致性又被称为强一致性、严格一致性、原子一致性。是程序能实现的最高的一致性模型，也是分布式系统用户最期望的一致性。CAP 中的 C 一般就指它</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="raft-java"><a href="#raft-java" class="headerlink" title="raft-java"></a><a href="https://github.com/wenweihu86/raft-java">raft-java</a></h3><h3 id="jraft"><a href="#jraft" class="headerlink" title="jraft"></a><a href="https://github.com/sofastack/sofa-jraft">jraft</a></h3><p>读服务，可以从 leader，也可以从 follower 读取状态机数据，但是从 follower 读取的可能不是最新的数据，存在时间差，也就是存在脏读。启用线性一致读将保证线性一致，并且支持从 follower 读取。<br>写服务，更改状态机数据，只能提交到 leader 写入。</p>
+<h3 id="线型一致性读"><a href="#线型一致性读" class="headerlink" title="线型一致性读"></a>线型一致性读</h3><p>ReadIndex Read<br>Lease Read</p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><h3 id="jepsen"><a href="#jepsen" class="headerlink" title="jepsen"></a>jepsen</h3><p><a href="https://github.com/jepsen-io/jepsen">https://github.com/jepsen-io/jepsen</a></p>
 <h3 id="sofa-jraft-jepsen"><a href="#sofa-jraft-jepsen" class="headerlink" title="sofa-jraft-jepsen"></a>sofa-jraft-jepsen</h3><p>代码现成的<a href="https://github.com/sofastack/sofa-jraft-jepsen">https://github.com/sofastack/sofa-jraft-jepsen</a> 实际操作一下</p>
 <p>使用docer部署5个节点 和 一个控制端</p>
 <p>Dockerfile</p>
@@ -195,9 +199,7 @@
 <li>partition-majority-test: Cuts the network into randomly majority groups.</li>
 </ul>
 <p>所有文件在<a href="https://github.com/8DE4732A/sofa-jraft-jepsen">https://github.com/8DE4732A/sofa-jraft-jepsen</a></p>
-<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><blockquote>
-<p>参考:<br><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a><br><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></p>
-</blockquote>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>参考:<br><a href="https://raft.github.io/raft.pdf">https://raft.github.io/raft.pdf</a><br><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a><br><a href="https://zhuanlan.zhihu.com/p/130974371">https://zhuanlan.zhihu.com/p/130974371</a><br><a href="https://segmentfault.com/a/1190000022248118">https://segmentfault.com/a/1190000022248118</a><br><a href="https://pingcap.com/blog-cn/lease-read/">https://pingcap.com/blog-cn/lease-read/</a></p>
 ]]></content>
       <categories>
         <category>算法</category>
