@@ -7,15 +7,28 @@ mp3:
 cover:
 ---
 ## 起因
+分布式保证一致性
 
 ## 线型一致性
+Linearizability
+线性一致性又被称为强一致性、严格一致性、原子一致性。是程序能实现的最高的一致性模型，也是分布式系统用户最期望的一致性。CAP 中的 C 一般就指它
 
 ## 比较
 
+
 ## 实现
+### [raft-java](https://github.com/wenweihu86/raft-java)
+
+
+### [jraft](https://github.com/sofastack/sofa-jraft)
+
+读服务，可以从 leader，也可以从 follower 读取状态机数据，但是从 follower 读取的可能不是最新的数据，存在时间差，也就是存在脏读。启用线性一致读将保证线性一致，并且支持从 follower 读取。
+写服务，更改状态机数据，只能提交到 leader 写入。
+### 线型一致性读
+ReadIndex Read
+Lease Read
 
 ## 验证
-
 ### jepsen
 [https://github.com/jepsen-io/jepsen](https://github.com/jepsen-io/jepsen)
 
@@ -110,7 +123,10 @@ project.cli 修改 :jvm-opts ["-Xms1g" "-Xmx1g" "-server" "-XX:+UseG1GC"]
 
 
 
-> 参考:
+参考:
 [https://raft.github.io/raft.pdf](https://raft.github.io/raft.pdf)
 [http://thesecretlivesofdata.com/raft/](http://thesecretlivesofdata.com/raft/)
+[https://zhuanlan.zhihu.com/p/130974371](https://zhuanlan.zhihu.com/p/130974371)
+[https://segmentfault.com/a/1190000022248118](https://segmentfault.com/a/1190000022248118)
+[https://pingcap.com/blog-cn/lease-read/](https://pingcap.com/blog-cn/lease-read/)
 
