@@ -245,6 +245,16 @@
       </tags>
   </entry>
   <entry>
+    <title>openpyxl</title>
+    <url>/2021/02/01/openpyxl/</url>
+    <content><![CDATA[<p>合并单元格数据获取</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_cell_value</span>(<span class="params">ws, row, column</span>):</span></span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> ws.merged_cells.ranges:</span><br><span class="line">        <span class="keyword">if</span> row &gt;= r.min_row <span class="keyword">and</span> row &lt;= r.max_row <span class="keyword">and</span> column &gt;= r.min_col <span class="keyword">and</span> column &lt;= r.max_col:</span><br><span class="line">            <span class="keyword">return</span> ws.cell(r.min_row, r.min_col).value</span><br><span class="line">    <span class="keyword">return</span> ws.cell(row, column).value</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人人影视</title>
     <url>/2020/10/17/rrys/</url>
     <content><![CDATA[<p>树莓派接入了两个isp(长城宽带，移动),由于长城宽带限制，使用人人影视时只想用移动的网。<br>使用的方案可以用veth，使用不同的网路命名空间加iptables, 还有直接借用docker</p>

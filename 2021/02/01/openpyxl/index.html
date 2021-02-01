@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Tag: linux - 风中鸷鸟</title>
+    <title>openpyxl - 风中鸷鸟</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="blog,"> 
-    <meta name="description" content="blog,"> 
+    <meta name="description" content="blog,合并单元格数据获取
+12345def get_cell_value(ws, row, column):    for r in ws.merged_cells.ranges:        if r,"> 
     <meta name="author" content="刘平"> 
     <link rel="alternative" href="atom.xml" title="风中鸷鸟" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -33,109 +34,76 @@
 <body class="loading">
     <span id="config-title" style="display:none">风中鸷鸟</span>
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="https://github.com/8DE4732A" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="mailto:liuping@liuping.win" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2021 刘平.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/cover2.jpeg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.3" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://liuping.win"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">openpyxl</h3>
+    <div class="social">
         <div>
-            <a class="image-logo" href="/"></a>
-			
-			<div class="iconfont icon-search switchsearch" href="/search/" title="搜索"></div>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
     </div>
-    
-    <div id="post0">
-        <p>十一月 07, 2020</p>
-        <h2><a href="/2020/11/07/leanote/" title="蚂蚁笔记" class="posttitle">蚂蚁笔记</a></h2>
-        <p class="summary">安装蚂蚁笔记
-12345678910#启动专属mongodocker run -d -p 37017:27017 ...</p>
-    </div>
-    
+    <div class="scrollbar"></div>
 </div>
 
-    <div id="primary">
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">openpyxl</h1>
+        <div class="stuff">
+            <span>二月 01, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>合并单元格数据获取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_cell_value</span>(<span class="params">ws, row, column</span>):</span></span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> ws.merged_cells.ranges:</span><br><span class="line">        <span class="keyword">if</span> row &gt;= r.min_row <span class="keyword">and</span> row &lt;= r.max_row <span class="keyword">and</span> column &gt;= r.min_col <span class="keyword">and</span> column &lt;= r.max_col:</span><br><span class="line">            <span class="keyword">return</span> ws.cell(r.min_row, r.min_col).value</span><br><span class="line">    <span class="keyword">return</span> ws.cell(row, column).value</span><br></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop src="" data-autoplay="true">
+                <!-- <source type="audio/mpeg" src=""> -->
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/audio/鸣小明 - 无人之岛.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='/audio/片岡真央 - メインテーマ.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
         
-<div class="post">
-    <a href="/2020/10/17/rrys/" title="人人影视">
-        <img src="/img/cover8.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十月 17, 2020</p>
-        <h3><a href="/2020/10/17/rrys/" title="人人影视" class="posttitle">人人影视</a></h3>
-        <p>树莓派接入了两个isp(长城宽带，移动),由于长城宽带限制，使用人人影视时只想用移动的网。使用的方案可以用veth，使用不同的网路命名空间加iptable...</p>
-    </div>
-</div>
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
 
 
     </div>
     
 </div>
-<div id="preview"></div>
 
 
-
+    </div>
+</div>
 </body>
 
 
